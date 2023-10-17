@@ -13,11 +13,14 @@ public class InputView {
 
     public String getInputNumber() {
         String input = scanner.next();
-        List<Integer> test = Computer.generateNumber();
-        for (Integer integer : test) {
-            System.out.println(integer);
-        }
+        validateSize(input);
         return input;
+    }
+
+    private static void validateSize(String input) {
+        if (input.length() != 3) {
+            throw new IllegalArgumentException("플레이어는 세자리 수를 입력해야 합니다.");
+        }
     }
 
 }
