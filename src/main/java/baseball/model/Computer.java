@@ -14,10 +14,8 @@ public class Computer {
             int randomNumber = Randoms.pickNumberInRange(1, 9);
             if (!answer.contains(randomNumber)) {
                 answer.add(randomNumber);
-                System.out.println(randomNumber);
             }
         }
-
         return answer;
     }
 

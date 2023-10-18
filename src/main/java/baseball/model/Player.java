@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Player {
 
-    private static final List <String> player = new ArrayList<>();
+    private static final List<Integer> player = new ArrayList<>();
 
-    public List<String> getPlayer() {
+    public List<Integer> getPlayer() {
         return player;
     }
 }
