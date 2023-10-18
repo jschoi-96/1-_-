@@ -1,18 +1,20 @@
 package baseball.model;
 
+import camp.nextstep.edu.missionutils.Randoms;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
 
 public class Computer {
 
     private static final List<Integer> answer = new ArrayList<>();
-    private static Random random = new Random();
     public static List<Integer> generateNumber () {
         while (answer.size() < 3) {
-            int randomNumber = random.nextInt(9) + 1;
+            int randomNumber = Randoms.pickNumberInRange(1, 9);
             if (!answer.contains(randomNumber)) {
                 answer.add(randomNumber);
+                System.out.println(randomNumber);
             }
         }
 
