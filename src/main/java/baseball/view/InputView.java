@@ -15,7 +15,14 @@ public class InputView {
 
     public String getInputNumber() {
         String input = scanner.next();
+        validateController(input);
         return input;
+    }
+
+    private static void validateController(String input) {
+        validateSize(input);
+        validateString(input);
+        validateDuplicate(input);
     }
 
     private static void validateSize(String input) {
