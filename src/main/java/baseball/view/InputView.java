@@ -1,21 +1,21 @@
 package baseball.view;
 
-import baseball.model.Computer;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Pattern;
 
 public class InputView {
 
     private static Scanner scanner = new Scanner(System.in);
+    private static final List<String> inputNumber = new ArrayList<>();
 
-
+    public List<String> getList() {
+        return inputNumber;
+    }
     public String getInputNumber() {
         String input = scanner.next();
         validateController(input);
+        inputNumber.add(input);
         return input;
     }
 
