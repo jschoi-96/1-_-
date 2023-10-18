@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 public class InputView {
 
@@ -14,7 +15,6 @@ public class InputView {
 
     public String getInputNumber() {
         String input = scanner.next();
-        validateSize(input);
         return input;
     }
 
@@ -31,6 +31,13 @@ public class InputView {
         }
         if (duplicate.size() != 3) {
             throw new IllegalArgumentException("중복되는 숫자를 입력값으로 받을 수 없습니다.");
+        }
+    }
+
+    private static void validateString(String input) {
+        String pattern = "^[0-9]*$";
+        if (!Pattern.matches(pattern , input)){
+            throw new IllegalArgumentException("숫자 외의 값은 입력값으로 받을 수 없습니다.");
         }
     }
 
